@@ -1,0 +1,156 @@
+:root {
+  --primary: #250C5A;
+  --text: #ffffff;
+  --secondary: #000000;
+  --background: #0B0C28;
+  --accent: #31A5FF;
+  overflow-y: none;
+}
+
+body{
+  background-color: var(--background);
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+.container{
+  width: 940px;
+  margin: auto;
+}
+
+#home{
+  width: 39px;
+  height: 39px;
+}
+
+.navbar{
+  margin-top: 31px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.homeBackground{
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  height: 56px;
+  width: 56px;
+}
+
+.homeBackground:hover{
+  background-color:var(--accent);
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+.title{
+  color: var(--text);
+  font-size: 48px;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 4.8px;
+}
+
+.heading{
+  color: var(--Accent, #31A5FF);
+  /* Heading */
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.smallHeading{
+  color: var(--Text, #FFF);
+  /* Small Heading */
+  font-family: "Kumbh Sans";
+  font-size: 32px;
+    font-style: normal;
+  font-weight: 500;
+  line-height: 125%; /* 40px */
+  letter-spacing: 0.96px;
+}
+
+.paragraph{
+  font-family: "Kumbh Sans";
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.sortingTable{
+  min-height: 530px;
+  display: flex; 
+  justify-content: center;
+  align-items: flex-end;
+  width: calc(100%-26px);
+  padding: 0 14px 0 14px; 
+}
+
+.sortCard{
+  padding-top: 15px;
+  padding-left: 32px;
+  color: var(--text);
+  background-color: var(--primary);
+  border: 1px solid var(--text);
+  border-radius: 20px;
+}
+.sortCard:hover{
+  background-color: var(--secondary);
+  cursor: pointer;
+}
+
+.card{
+  background-color: var(--primary);
+  border: 1px solid var(--text);
+  border-radius: 20px;
+  height: 78px;
+}
+
+.selectableCard:hover{
+  background-color: var(--secondary);
+}
+
+.blackCard{
+  background-color: var(--secondary);
+  color: var(--accent);
+  border-radius: 20px;
+  height: 78px;
+  padding: '0 18px 0 18px';
+  border: 1px solid var(--accent);
+}
+
+.flexCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectableIcon{
+  width: 45px;
+  cursor: pointer;
+}
+
+.dataBar{
+  border-top-left-radius: 6px; 
+  border-top-right-radius: 6px;
+  background: var(--accent);
+}
+.dataBar[data-status="active"]{
+  background: var(--text);
+}
+.dataBar[data-status="solved"]{
+  background: var(--secondary);
+}
+
+.primary{
+  color: var(--primary);
+}
+.text{
+  color: var(--text);
+}
+.secondary{
+  color: var(--secondary);
+}
+.accent{
+  color: var(--accent);
+}
