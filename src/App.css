@@ -83,7 +83,7 @@ body{
   justify-content: center;
   align-items: flex-end;
   width: calc(100%-26px);
-  padding: 0 14px 0 14px; 
+  padding: 0 20px 0 20px; 
 }
 
 .sortCard{

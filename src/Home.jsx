@@ -17,10 +17,10 @@ export default function Home() {
                 Finds the smallest element in the array and swaps it with the first element.
             </div>
         </div>
-        <div className='sortCard' style={{width: '268px', paddingBottom: '33px'}} onClick={() => goToPage('quick')}>
-            <div className='heading'>Quick Sort</div>
+        <div className='sortCard' style={{width: '268px', paddingBottom: '33px'}} onClick={() => goToPage('bubble')}>
+            <div className='heading'>Bubble Sort</div>
             <div className='paragraph' style={{width: '213px', marginTop: '28px'}}>
-                A recursive sorting algorithm that takes the first element as a partition.  
+                A shitty algorithm
             </div>
         </div>
     </div>
