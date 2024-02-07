@@ -1,81 +1,60 @@
 import { useState, useEffect } from 'react';
+import bogoSortGen from '../generators/bogoSortGen';
 import SortingTable from '../components/SortingTable';
 import IncreaserDecreaser from "../components/IncreaserDecreaser";
 import TimeDisplay from "../components/TimeDisplay";
 import BlackCard from '../components/BlackCard';
+import useTimeString from '../custom_hooks/useTimeString';
 import shuffleArray from '../utility/shuffleArray';
 import getTimeString from '../utility/getTimeString';
-import pauseComp from '../utility/pauseComp';
-import getRandomArray from '../utility/getRandomArray';
-
-function isSorted(array) {
-    for (let i = 1; i < array.length; i++) {
-        if (array[i] < array[i - 1]) {
-            return false;
-        }
-    }
-    return true;
-}
+import generateArray from '../utility/generateArray';
 
 export default function BogoSort() {
-    const [numDataPoints, setNumDataPoints] = useState(10);
-    const [startTime, setStartTime] = useState(Date.now());
-    const [msElapsed, setMSElapsed] = useState(0);
-    const [arrayToSort, setArrayToSort] = useState(GetRandomArray(numDataPoints));
-    const [timeString, setTimeString] = useState('00:00:00');
+    const [numDataPoints, setNumDataPoints] = useState(6);
+    const [elements, setElements] = useState(shuffleArray(generateArray(numDataPoints)));
     const [numShuffles, setNumShuffles] = useState(0);
-    const [doneSorting, setDoneSorting] = useState(false);
+    const [timeString] = useTimeString(numShuffles, numDataPoints);
+    const [generator, setGenerator] = useState(bogoSortGen(elements));
 
     useEffect(() => {
-        setArrayToSort(GetRandomArray(numDataPoints));
-        setMSElapsed(0);
-        setStartTime(Date.now());
-        setTimeString('00:00:00');
         setNumShuffles(0);
-        setSortedDataPoints([]);
-        setDoneSorting(false);
+        setGenerator(bogoSortGen(shuffleArray(generateArray(numDataPoints))));
     }, [numDataPoints])
 
     useEffect(() => {
-        if (isSorted(arrayToSort)) {
-            setDoneSorting(true);
+        if(!generator){
+            setGenerator(bogoSortGen(elements));
             return;
         }
-        else {
-            setArrayToSort(prevArray => shuffleArray([...prevArray]));
-            setNumShuffles(n => n + 1);
-        }
-        if (trackTime === 50) {
-            trackTime = 0;
-            setMSElapsed(Date.now() - startTime);
-        }
-        trackTime++;
-    }, [arrayToSort])
-
-    useEffect(() => {
-        let string = getTimeString(msElapsed);
-        setTimeString(string);
-    }, [msElapsed])
-
-    const increaseDataPoints = () => {
-        setNumDataPoints(num => num + 1);
-    }
-    const decreaseDataPoints = () => {
-        setNumDataPoints(num => num - 1);
-    }
+        const interval = setInterval(() => {
+            const result = generator.next(elements);
+            if(!result.done){
+                let copy = JSON.parse(JSON.stringify(result.value));
+                setElements(copy);
+                setNumShuffles(ns => ns + 1);
+            }
+            else{
+                clearInterval(interval);
+            }
+        }, [0])
+        // Cleanup function to clear the interval
+        return () => clearInterval(interval);
+    }, [generator])
 
     return (
         <div>
-            <SortingTable elements={arrayToSort} heightMultiplier={5} doneSortingIndexes={sortedDataPoints}/>
+            <SortingTable elements={elements} heightMultiplier={5}/>
             <div style={{display:'flex', justifyContent: 'flex-end', marginTop:'15px' }}>
                 <BlackCard content={'BOGO SORT'}/>
                 <div className='card flexCenter smallHeading' style={{width:'180px', marginRight:'15px'}}>
                     {numShuffles}
                 </div>
                 <IncreaserDecreaser 
-                    increaseCallback={() => increaseDataPoints()}
-                    decreaseCallback={() => decreaseDataPoints()}
+                    callback={setNumDataPoints}
                     value={numDataPoints}
+                    increment={1}
+                    max={20}
+                    min={5}
                 />
                 <TimeDisplay timeString={timeString}/>
             </div>

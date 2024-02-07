@@ -1,7 +1,14 @@
 export default function SortingTable({ elements }) {
-    return <div className='card sortingTable'>
-        {elements.map((element, idx) => element.active ? <div key={idx} className='dataBar' style={{ height: `${element.val * (500/elements.length)}px`, width: `calc(100%/${elements.length})` }} data-status='active'>
-        </div> : element.solved ? <div key={idx} className='dataBar' style={{ height: `${element.val * (500/elements.length)}px`, width: `calc(100%/${elements.length})` }} data-status='solved'></div> 
-        : <div key={idx} className='dataBar' style={{ height: `${element.val * (500/elements.length)}px`, width: `calc(100%/${elements.length})` }}></div> )}
-    </div>
+    const barStyle = {
+        height: `calc(${(500 / elements.length)}px - 2px)`,
+        width: `calc(100% / ${elements.length})`
+    };
+
+    return (
+        <div className='card sortingTable'>
+            {elements.map(({ active, solved, val }, idx) => (
+                <div key={idx} className='dataBar' style={{ ...barStyle, height: `${val * (500 / elements.length)}px` }} data-status={active ? 'active' : (solved ? 'solved' : '')}></div>
+            ))}
+        </div>
+    );
 }
