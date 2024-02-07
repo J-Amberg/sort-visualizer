@@ -7,7 +7,7 @@ export default function SortingTable({ elements }) {
     return (
         <div className='card sortingTable'>
             {elements.map(({ active, solved, val }, idx) => (
-                <div key={idx} className='dataBar' style={{ ...barStyle, height: `${val * (500 / elements.length)}px` }} data-status={active ? 'active' : (solved ? 'solved' : '')}></div>
+                <div key={idx} className='dataBar' style={{ ...barStyle, height: `${val * (526 / elements.length)}px` }} data-status={active ? 'active' : (solved ? 'solved' : '')}></div>
             ))}
         </div>
     );

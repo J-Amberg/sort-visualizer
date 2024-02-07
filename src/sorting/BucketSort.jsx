@@ -45,6 +45,13 @@ export default function BucketSort() {
         <div style={{ display: 'flex', marginTop: '15px', justifyContent: 'flex-end', gap: '15px' }}>
             <BlackCard content={'BUCKET SORT'} />
             <IncreaserDecreaser
+                callback={setBucketSize}
+                value={bucketSize}
+                increment={1}
+                max={50}
+                min={1}
+            />
+            <IncreaserDecreaser
                 callback={setNumDataPoints}
                 value={numDataPoints}
                 increment={20}
@@ -52,16 +59,6 @@ export default function BucketSort() {
                 min={100}
             />
             <TimeDisplay timeString={timeString} />
-        </div>
-        <div style={{ display: 'flex', marginTop: '15px', justifyContent: 'flex-end', gap: '15px' }}>
-
-            <IncreaserDecreaser
-                callback={setBucketSize}
-                value={bucketSize}
-                increment={1}
-                max={50}
-                min={1}
-            />
         </div>
     </div>
 }
