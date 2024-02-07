@@ -1,9 +1,10 @@
 import Home from './Home';
 import './App.css';
+import House from './assets/house.png';
 import BubbleSort from './sorting/BubbleSort';
 import BogoSort from './sorting/BogoSort';
 import SelectionSort from './sorting/SelectionSort';
-import House from './assets/house.png';
+import BucketSort from './sorting/BucketSort';
 
 import {
   createBrowserRouter,
@@ -12,20 +13,24 @@ import {
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Home/>,
   },
   {
-    path: "bogo",
+    path: 'bogo',
     element: <BogoSort />,
   },
   {
-    path: "selection",
+    path: 'selection',
     element: <SelectionSort />
   },
   {
     path: 'bubble',
     element: <BubbleSort/>
+  },
+  {
+    path: 'bucket',
+    element: <BucketSort/>
   }
 ]);
 

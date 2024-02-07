@@ -5,7 +5,6 @@ export default function* bubbleSort(array){
             array[j].active = true;
             if(array[j].val > array[j + 1].val){
                 [array[j], array[j + 1]] = [array[j + 1], array[j]];
-                console.log(array[j], array[j + 1]);
             }
             yield array;
             array[j].active = false;

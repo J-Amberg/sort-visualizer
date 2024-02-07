@@ -14,7 +14,7 @@ export default function IncreaserDecreaser({value, callback, increment, min, max
         }
     }
 
-    return <div className='card flexCenter smallHeading' style={{ marginRight: '15px',  width: '222px' }}>
+    return <div className='card flexCenter smallHeading' style={{ width: '222px' }}>
         <img src={MinusSign} alt='minus symbol' className='selectableIcon'
             onClick={decreaseValue} />
         <span style={{margin: '0 15px 0 15px'}}>{value}</span>

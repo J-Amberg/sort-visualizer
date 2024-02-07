@@ -10,6 +10,9 @@ export default function useTimeString(update, reset){
     }, [reset])
 
     useEffect(() => {
+        if(update[0].solved){
+            return;
+        }
         let msElapsed = Date.now() - startTime;
         let string = getTimeString(msElapsed);
         setTimeString(string);
