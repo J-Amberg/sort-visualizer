@@ -17,5 +17,8 @@ export default function Home() {
         <div className='sortCard' onClick={() => goToPage('bucket')}>
             <div className='heading'>Bucket Sort</div>
         </div>
+        <div className='sortCard' onClick={() => goToPage('quick')}>
+            <div className='heading'>Quick Sort</div>
+        </div>
     </div>
 }

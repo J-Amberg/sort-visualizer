@@ -5,6 +5,7 @@ import BubbleSort from './sorting/BubbleSort';
 import BogoSort from './sorting/BogoSort';
 import SelectionSort from './sorting/SelectionSort';
 import BucketSort from './sorting/BucketSort';
+import QuickSort from './sorting/QuickSort';
 
 import {
   createBrowserRouter,
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: 'bucket',
     element: <BucketSort/>
+  },
+  {
+    path: 'quick',
+    element: <QuickSort/>
   }
 ]);
 

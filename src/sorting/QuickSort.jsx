@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import bucketSortGen from '../generators/bucketSortGen';
+import quickSortGen from '../generators/quickSortGen';
 import SortingTable from "../components/SortingTable";
 import BlackCard from '../components/BlackCard';
 import TimeDisplay from '../components/TimeDisplay';
@@ -8,18 +8,17 @@ import useTimeString from '../custom_hooks/useTimeString';
 import generateArray from "../utility/generateArray";
 import shuffleArray from '../utility/shuffleArray';
 
-export default function BucketSort() {
+export default function QuickSort() {
     const [numDataPoints, setNumDataPoints] = useState(500);
     const [elements, setElements] = useState(shuffleArray(generateArray(numDataPoints)));
-    const [bucketSize, setBucketSize] = useState(20);
-    const [generator, setGenerator] = useState(bucketSortGen(elements, bucketSize));
+    const [generator, setGenerator] = useState(quickSortGen(elements));
     const [reset, setReset] = useState(false);
     const [timeString] = useTimeString(elements, reset);
 
     useEffect(() => {
-        setGenerator(bucketSortGen(shuffleArray(generateArray(numDataPoints)), bucketSize));
+        setGenerator(quickSortGen(shuffleArray(generateArray(numDataPoints))));
         setReset(r => !r);
-    }, [numDataPoints, bucketSize])
+    }, [numDataPoints])
 
     useEffect(() => {
         if (!generator) {
@@ -43,14 +42,7 @@ export default function BucketSort() {
     return <div>
         <SortingTable elements={elements} />
         <div style={{ display: 'flex', marginTop: '15px', justifyContent: 'flex-end', gap: '15px' }}>
-            <BlackCard content={'BUCKET SORT'} />
-            <IncreaserDecreaser
-                callback={setBucketSize}
-                value={bucketSize}
-                increment={1}
-                max={50}
-                min={1}
-            />
+            <BlackCard content={'QUICK SORT'} />
             <IncreaserDecreaser
                 callback={setNumDataPoints}
                 value={numDataPoints}

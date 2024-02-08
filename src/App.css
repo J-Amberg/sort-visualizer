@@ -140,6 +140,9 @@ body{
 .dataBar[data-status="solved"]{
   background: var(--secondary);
 }
+.dataBar[data-status="selected"]{
+  background: var(--background);
+}
 
 .primary{
   color: var(--primary);

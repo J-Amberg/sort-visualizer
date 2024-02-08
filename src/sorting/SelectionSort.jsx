@@ -9,7 +9,7 @@ import generateArray  from "../utility/generateArray";
 import shuffleArray from '../utility/shuffleArray';
 
 export default function SelectionSort() {
-    const [numDataPoints, setNumDataPoints] = useState(100);
+    const [numDataPoints, setNumDataPoints] = useState(120);
     const [elements, setElements] = useState(shuffleArray(generateArray(numDataPoints)));
     const [generator, setGenerator] = useState(selectionSortGen(elements));
     const [timeString] = useTimeString(elements, numDataPoints);
