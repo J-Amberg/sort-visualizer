@@ -8,6 +8,7 @@ import BucketSort from './sorting/BucketSort';
 import QuickSort from './sorting/QuickSort';
 import InsertionSort from './sorting/InsertionSort';
 import RadixSort from './sorting/RadixSort';
+import ShakerSort from './sorting/ShakerSort';
 
 import {
   createBrowserRouter,
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: 'radix',
     element: <RadixSort/>
+  },
+  {
+    path: 'shaker',
+    element: <ShakerSort/>
   }
 ]);
 

@@ -11,11 +11,11 @@ import shuffleArray from '../utility/shuffleArray';
 export default function ShakerSort() {
     const [numDataPoints, setNumDataPoints] = useState(120);
     const [elements, setElements] = useState(shuffleArray(generateArray(numDataPoints)));
-    const [generator, setGenerator] = useState(bubbleSortGen(elements));
+    const [generator, setGenerator] = useState(shakerSortGen(elements));
     const [timeString] = useTimeString(elements, numDataPoints);
 
     useEffect(() => {
-        setGenerator(bubbleSortGen(shuffleArray(generateArray(numDataPoints))));
+        setGenerator(shakerSortGen(shuffleArray(generateArray(numDataPoints))));
     }, [numDataPoints])
 
     useEffect(() => {
