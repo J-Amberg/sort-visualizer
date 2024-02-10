@@ -29,5 +29,8 @@ export default function Home() {
         <div className='sortCard' onClick={() => goToPage('shaker')}>
             <div className='heading'>Shaker Sort</div>
         </div>
+        <div className='sortCard' onClick={() => goToPage('oddeven')}>
+            <div className='heading'>Odd Even Sort</div>
+        </div>
     </div>
 }

@@ -9,6 +9,7 @@ import QuickSort from './sorting/QuickSort';
 import InsertionSort from './sorting/InsertionSort';
 import RadixSort from './sorting/RadixSort';
 import ShakerSort from './sorting/ShakerSort';
+import OddEvenSort from './sorting/OddEvenSort';
 
 import {
   createBrowserRouter,
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
   {
     path: 'shaker',
     element: <ShakerSort/>
+  },
+  {
+    path: 'oddeven',
+    element: <OddEvenSort/>
   }
 ]);
 

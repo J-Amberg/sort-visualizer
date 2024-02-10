@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import bubbleSortGen from '../generators/bubbleSortGen';
+import oddEvenSortGen from '../generators/oddEvenSortGen';
 import SortingTable from "../components/SortingTable";
 import BlackCard from '../components/BlackCard';
 import TimeDisplay from '../components/TimeDisplay';
@@ -11,11 +11,11 @@ import shuffleArray from '../utility/shuffleArray';
 export default function SelectionSort() {
     const [numDataPoints, setNumDataPoints] = useState(120);
     const [elements, setElements] = useState(shuffleArray(generateArray(numDataPoints)));
-    const [generator, setGenerator] = useState(bubbleSortGen(elements));
+    const [generator, setGenerator] = useState(oddEvenSortGen(elements));
     const [timeString] = useTimeString(elements, numDataPoints);
 
     useEffect(() => {
-        setGenerator(bubbleSortGen(shuffleArray(generateArray(numDataPoints))));
+        setGenerator(oddEvenSortGen(shuffleArray(generateArray(numDataPoints))));
     }, [numDataPoints])
 
     useEffect(() => {
@@ -36,7 +36,7 @@ export default function SelectionSort() {
     return <div>
         <SortingTable elements={elements} />
         <div className='componentRow'>
-                <BlackCard content={'BUBBLE SORT'}/>
+                <BlackCard content={'ODD/EVEN SORT'}/>
                 <IncreaserDecreaser
                     callback={setNumDataPoints}
                     value={numDataPoints}

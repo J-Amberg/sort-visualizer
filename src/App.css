@@ -118,6 +118,13 @@ body{
   border: 1px solid var(--accent);
 }
 
+.componentRow{
+  display:flex;
+  justify-content: flex-end;
+  margin-top:15px;
+  gap: 15px;
+}
+
 .flexCenter{
   display: flex;
   justify-content: center;

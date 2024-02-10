@@ -35,9 +35,9 @@ export default function ShakerSort() {
     
     return <div>
         <SortingTable elements={elements} />
-        <div style={{display:'flex', justifyContent: 'flex-end', marginTop:'15px' }}>
+        <div className='componentRow'>
                 <BlackCard content={'SHAKER SORT'}/>
-                *<IncreaserDecreaser
+                <IncreaserDecreaser
                     callback={setNumDataPoints}
                     value={numDataPoints}
                     increment={10}
