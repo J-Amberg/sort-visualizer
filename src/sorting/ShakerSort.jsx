@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import bubbleSortGen from '../generators/bubbleSortGen';
+import shakerSortGen from '../generators/shakerSortGen';
 import SortingTable from "../components/SortingTable";
 import BlackCard from '../components/BlackCard';
 import TimeDisplay from '../components/TimeDisplay';
@@ -8,7 +8,7 @@ import useTimeString from '../custom_hooks/useTimeString';
 import generateArray  from "../utility/generateArray";
 import shuffleArray from '../utility/shuffleArray';
 
-export default function SelectionSort() {
+export default function ShakerSort() {
     const [numDataPoints, setNumDataPoints] = useState(120);
     const [elements, setElements] = useState(shuffleArray(generateArray(numDataPoints)));
     const [generator, setGenerator] = useState(bubbleSortGen(elements));
@@ -36,7 +36,7 @@ export default function SelectionSort() {
     return <div>
         <SortingTable elements={elements} />
         <div style={{display:'flex', justifyContent: 'flex-end', marginTop:'15px' }}>
-                <BlackCard content={'BUBBLE SORT'}/>
+                <BlackCard content={'SHAKER SORT'}/>
                 *<IncreaserDecreaser
                     callback={setNumDataPoints}
                     value={numDataPoints}

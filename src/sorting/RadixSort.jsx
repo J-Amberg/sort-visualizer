@@ -1,22 +1,23 @@
 import { useState, useEffect } from 'react';
-import quickSortGen from '../generators/quickSortGen';
+import radixSortGen from '../generators/radixSortGen';
 import SortingTable from "../components/SortingTable";
 import BlackCard from '../components/BlackCard';
 import TimeDisplay from '../components/TimeDisplay';
 import IncreaserDecreaser from '../components/IncreaserDecreaser';
 import useTimeString from '../custom_hooks/useTimeString';
+import generateFewUniqueArray from '../utility/generateFewUniqueArray';
 import generateArray from "../utility/generateArray";
 import shuffleArray from '../utility/shuffleArray';
 
-export default function QuickSort() {
+export default function RadixSort() {
     const [numDataPoints, setNumDataPoints] = useState(1000);
     const [elements, setElements] = useState(shuffleArray(generateArray(numDataPoints)));
-    const [generator, setGenerator] = useState(quickSortGen(elements));
+    const [generator, setGenerator] = useState(radixSortGen(elements));
     const [reset, setReset] = useState(false);
     const [timeString] = useTimeString(elements, reset);
 
     useEffect(() => {
-        setGenerator(quickSortGen(shuffleArray(generateArray(numDataPoints))));
+        setGenerator(radixSortGen(shuffleArray(generateArray(numDataPoints))));
         setReset(r => !r);
     }, [numDataPoints])
 
@@ -29,6 +30,7 @@ export default function QuickSort() {
             }
             else {
                 clearInterval(interval);
+                setNumDataPoints(ndp => ndp + 50);
             }
         }, [0])
 
@@ -38,7 +40,7 @@ export default function QuickSort() {
     return <div>
         <SortingTable elements={elements} />
         <div style={{ display: 'flex', marginTop: '15px', justifyContent: 'flex-end', gap: '15px' }}>
-            <BlackCard content={'QUICK SORT'} />
+            <BlackCard content={'RADIX SORT'} />
             <IncreaserDecreaser
                 callback={setNumDataPoints}
                 value={numDataPoints}

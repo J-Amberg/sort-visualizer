@@ -19,10 +19,6 @@ export default function SelectionSort() {
     }, [numDataPoints])
 
     useEffect(() => {
-        if(!generator){
-
-        }
-
         const interval = setInterval(() => {
             const result = generator.next(elements);
             if(!result.done){

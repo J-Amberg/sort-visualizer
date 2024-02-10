@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import bubbleSortGen from '../generators/bubbleSortGen';
+import insertionSortGen from '../generators/insertionSortGen';
 import SortingTable from "../components/SortingTable";
 import BlackCard from '../components/BlackCard';
 import TimeDisplay from '../components/TimeDisplay';
@@ -8,14 +8,14 @@ import useTimeString from '../custom_hooks/useTimeString';
 import generateArray  from "../utility/generateArray";
 import shuffleArray from '../utility/shuffleArray';
 
-export default function SelectionSort() {
-    const [numDataPoints, setNumDataPoints] = useState(120);
+export default function InsertionSort() {
+    const [numDataPoints, setNumDataPoints] = useState(150);
     const [elements, setElements] = useState(shuffleArray(generateArray(numDataPoints)));
-    const [generator, setGenerator] = useState(bubbleSortGen(elements));
+    const [generator, setGenerator] = useState(insertionSortGen(elements));
     const [timeString] = useTimeString(elements, numDataPoints);
 
     useEffect(() => {
-        setGenerator(bubbleSortGen(shuffleArray(generateArray(numDataPoints))));
+        setGenerator(insertionSortGen(shuffleArray(generateArray(numDataPoints))));
     }, [numDataPoints])
 
     useEffect(() => {
@@ -35,9 +35,10 @@ export default function SelectionSort() {
     
     return <div>
         <SortingTable elements={elements} />
-        <div style={{display:'flex', justifyContent: 'flex-end', marginTop:'15px' }}>
-                <BlackCard content={'BUBBLE SORT'}/>
-                *<IncreaserDecreaser
+        <div style={{display:'flex', justifyContent: 'flex-end', marginTop: '15px', gap: '15px'}}>
+                <BlackCard content={'INSERTION SORT'}/>
+                <IncreaserDecreaser
+                     style={{marginRight: '15px'}}
                     callback={setNumDataPoints}
                     value={numDataPoints}
                     increment={10}

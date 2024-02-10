@@ -20,5 +20,11 @@ export default function Home() {
         <div className='sortCard' onClick={() => goToPage('quick')}>
             <div className='heading'>Quick Sort</div>
         </div>
+        <div className='sortCard' onClick={() => goToPage('insertion')}>
+            <div className='heading'>Insertion Sort</div>
+        </div>
+        <div className='sortCard' onClick={() => goToPage('radix')}>
+            <div className='heading'>Radix Sort</div>
+        </div>
     </div>
 }

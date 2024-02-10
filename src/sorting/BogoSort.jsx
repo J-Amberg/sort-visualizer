@@ -6,14 +6,13 @@ import TimeDisplay from "../components/TimeDisplay";
 import BlackCard from '../components/BlackCard';
 import useTimeString from '../custom_hooks/useTimeString';
 import shuffleArray from '../utility/shuffleArray';
-import getTimeString from '../utility/getTimeString';
 import generateArray from '../utility/generateArray';
 
 export default function BogoSort() {
     const [numDataPoints, setNumDataPoints] = useState(6);
     const [elements, setElements] = useState(shuffleArray(generateArray(numDataPoints)));
     const [numShuffles, setNumShuffles] = useState(0);
-    const [timeString] = useTimeString(numShuffles, numDataPoints);
+    const [timeString] = useTimeString(numShuffles, elements);
     const [generator, setGenerator] = useState(bogoSortGen(elements));
 
     useEffect(() => {
@@ -22,10 +21,6 @@ export default function BogoSort() {
     }, [numDataPoints])
 
     useEffect(() => {
-        if(!generator){
-            setGenerator(bogoSortGen(elements));
-            return;
-        }
         const interval = setInterval(() => {
             const result = generator.next(elements);
             if(!result.done){

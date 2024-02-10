@@ -22,10 +22,6 @@ export default function BucketSort() {
     }, [numDataPoints, bucketSize])
 
     useEffect(() => {
-        if (!generator) {
-
-        }
-
         const interval = setInterval(() => {
             const result = generator.next(elements);
             if (!result.done) {

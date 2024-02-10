@@ -3,7 +3,6 @@ export default function* quickSort(array) {
     let rightPointer = array.length - 1;
     let leftPointer = 1;
     let indexesToPartition = [[pivot, rightPointer]];
-    let isSorted = false;
 
     let x = 0;
     const swap = ((a, b) => { [array[a], array[b]] = [array[b], array[a]]; });
