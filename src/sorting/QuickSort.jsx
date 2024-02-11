@@ -9,7 +9,7 @@ import generateArray from "../utility/generateArray";
 import shuffleArray from '../utility/shuffleArray';
 
 export default function QuickSort() {
-    const [numDataPoints, setNumDataPoints] = useState(1000);
+    const [numDataPoints, setNumDataPoints] = useState(100);
     const [elements, setElements] = useState(shuffleArray(generateArray(numDataPoints)));
     const [generator, setGenerator] = useState(quickSortGen(elements));
     const [reset, setReset] = useState(false);
@@ -29,24 +29,30 @@ export default function QuickSort() {
             }
             else {
                 clearInterval(interval);
+                setNumDataPoints(ndp => ndp + 10);
             }
         }, [0])
 
         return () => clearInterval(interval);
     }, [generator])
 
-    return <div>
-        <SortingTable elements={elements} />
-        <div style={{ display: 'flex', marginTop: '15px', justifyContent: 'flex-end', gap: '15px' }}>
-            <BlackCard content={'QUICK SORT'} />
-            <IncreaserDecreaser
-                callback={setNumDataPoints}
-                value={numDataPoints}
-                increment={20}
-                max={2000}
-                min={100}
-            />
-            <TimeDisplay timeString={timeString} />
+    return <div style={{ margin: 'auto', width: '100%' }}>
+    <div style={{ display: 'flex', marginTop: '15px', justifyContent: 'flex-end', gap: '15px' }}>
+        <div className='heading' style={{ marginRight: 'auto' }}>
+            Quick Sort
+        </div>
+        <div style={{ marginTop: '10px' }}>
+            <div className='flexCenter'>
+                <div className='body' style={{ marginRight: '10px' }}>{numDataPoints}</div>
+                <div className="slidecontainer">
+                    <input type="range" min="10" max="2000" value={numDataPoints} className="slider" id="myRange" onChange={(e) => setNumDataPoints(e.target.value)} />
+                </div>
+            </div>
+            <div className='body' style={{ textAlign: 'right' }}>
+                {timeString}
+            </div>
         </div>
     </div>
+    <SortingTable elements={elements} />
+</div>
 }

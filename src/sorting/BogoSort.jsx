@@ -12,7 +12,7 @@ export default function BogoSort() {
     const [numDataPoints, setNumDataPoints] = useState(6);
     const [elements, setElements] = useState(shuffleArray(generateArray(numDataPoints)));
     const [numShuffles, setNumShuffles] = useState(0);
-    const [timeString] = useTimeString(numShuffles, elements);
+    const [timeString] = useTimeString(elements, numDataPoints);
     const [generator, setGenerator] = useState(bogoSortGen(elements));
 
     useEffect(() => {
@@ -36,23 +36,23 @@ export default function BogoSort() {
         return () => clearInterval(interval);
     }, [generator])
 
-    return (
-        <div>
-            <SortingTable elements={elements} heightMultiplier={5}/>
-            <div style={{display:'flex', justifyContent: 'flex-end', marginTop:'15px' }}>
-                <BlackCard content={'BOGO SORT'}/>
-                <div className='card flexCenter smallHeading' style={{width:'180px', marginRight:'15px'}}>
-                    {numShuffles}
+    return <div style={{ margin: 'auto', width: '100%' }}>
+        <div style={{ display: 'flex', marginTop: '15px', justifyContent: 'flex-end', gap: '15px' }}>
+            <div className='heading' style={{ marginRight: 'auto' }}>
+                BOGO Sort
+            </div>
+            <div style={{ marginTop: '10px' }}>
+                <div className='flexCenter'>
+                    <div className='body' style={{ marginRight: '10px' }}>{numDataPoints}</div>
+                    <div className="slidecontainer">
+                        <input type="range" min="4" max="20" value={numDataPoints} className="slider" id="myRange" onChange={(e) => setNumDataPoints(e.target.value)} />
+                    </div>
                 </div>
-                <IncreaserDecreaser 
-                    callback={setNumDataPoints}
-                    value={numDataPoints}
-                    increment={1}
-                    max={20}
-                    min={5}
-                />
-                <TimeDisplay timeString={timeString}/>
+                <div className='body' style={{ textAlign: 'right' }}>
+                    {timeString}
+                </div>
             </div>
         </div>
-    )
+        <SortingTable elements={elements} />
+    </div>
 }

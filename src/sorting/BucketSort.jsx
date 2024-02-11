@@ -36,25 +36,23 @@ export default function BucketSort() {
         return () => clearInterval(interval);
     }, [generator])
 
-    return <div>
-        <SortingTable elements={elements} />
-        <div style={{ display: 'flex', marginTop: '15px', justifyContent: 'flex-end', gap: '15px' }}>
-            <BlackCard content={'BUCKET SORT'} />
-            <IncreaserDecreaser
-                callback={setBucketSize}
-                value={bucketSize}
-                increment={1}
-                max={50}
-                min={1}
-            />
-            <IncreaserDecreaser
-                callback={setNumDataPoints}
-                value={numDataPoints}
-                increment={20}
-                max={2000}
-                min={100}
-            />
-            <TimeDisplay timeString={timeString} />
+    return <div style={{ margin: 'auto', width: '100%'}}>
+        <div style={{ display: 'flex', marginTop: '15px', justifyContent: 'flex-end', gap: '15px'}}>
+            <div className='heading' style={{ marginRight: 'auto' }}>
+                Bucket Sort
+            </div>
+            <div style={{marginTop:'10px'}}>
+                <div className='flexCenter'>
+                    <div className='body' style={{marginRight:'10px'}}>{numDataPoints}</div>
+                    <div className="slidecontainer">
+                        <input type="range" min="10" max="2000" value={numDataPoints} className="slider" id="myRange" onChange={(e) => setNumDataPoints(e.target.value)} />
+                    </div>
+                </div>
+                <div className='body' style={{textAlign:'right'}}>
+                    {timeString}
+                </div>
+            </div>
         </div>
+        <SortingTable elements={elements} />
     </div>
 }

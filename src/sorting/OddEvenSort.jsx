@@ -33,18 +33,23 @@ export default function SelectionSort() {
         return () => clearInterval(interval);
     }, [generator])
     
-    return <div>
-        <SortingTable elements={elements} />
-        <div className='componentRow'>
-                <BlackCard content={'ODD/EVEN SORT'}/>
-                <IncreaserDecreaser
-                    callback={setNumDataPoints}
-                    value={numDataPoints}
-                    increment={10}
-                    max={500}
-                    min={20}
-                />
-                <TimeDisplay timeString={timeString}/>
+    return <div style={{ margin: 'auto', width: '100%' }}>
+        <div style={{ display: 'flex', marginTop: '15px', justifyContent: 'flex-end', gap: '15px' }}>
+            <div className='heading' style={{ marginRight: 'auto' }}>
+                Odd Even Sort
+            </div>
+            <div style={{ marginTop: '10px' }}>
+                <div className='flexCenter'>
+                    <div className='body' style={{ marginRight: '10px' }}>{numDataPoints}</div>
+                    <div className="slidecontainer">
+                        <input type="range" min="10" max="2000" value={numDataPoints} className="slider" id="myRange" onChange={(e) => setNumDataPoints(e.target.value)} />
+                    </div>
+                </div>
+                <div className='body' style={{ textAlign: 'right' }}>
+                    {timeString}
+                </div>
+            </div>
         </div>
+        <SortingTable elements={elements} />
     </div>
 }

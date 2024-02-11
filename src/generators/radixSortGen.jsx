@@ -31,6 +31,8 @@ export default function* radixSortGen(array) {
 }
 
 function* countingSort(array, place) {
+
+    const swap =(a, b) => {[array[a], array[b]] = [array[b], array[a]]}
     //finds the largest value in the array
     let getMax = () => {
         let max = 0;
@@ -68,7 +70,6 @@ function* countingSort(array, place) {
         }
     }
     getFullCounts();
-    console.table(counts);
 
     let original = JSON.parse(JSON.stringify(array));
     for (let i = array.length - 1; i >= 0; i--) {
