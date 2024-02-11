@@ -5,7 +5,7 @@ import useTimeString from '../custom_hooks/useTimeString';
 import generateArray  from "../utility/generateArray";
 import shuffleArray from '../utility/shuffleArray';
 
-export default function SelectionSort() {
+export default function OddEvenSort() {
     const [numDataPoints, setNumDataPoints] = useState(120);
     const [elements, setElements] = useState(shuffleArray(generateArray(numDataPoints)));
     const [generator, setGenerator] = useState(oddEvenSortGen(elements));
