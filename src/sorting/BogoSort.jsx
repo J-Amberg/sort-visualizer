@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 import bogoSortGen from '../generators/bogoSortGen';
 import SortingTable from '../components/SortingTable';
-import IncreaserDecreaser from "../components/IncreaserDecreaser";
-import TimeDisplay from "../components/TimeDisplay";
-import BlackCard from '../components/BlackCard';
 import useTimeString from '../custom_hooks/useTimeString';
 import shuffleArray from '../utility/shuffleArray';
 import generateArray from '../utility/generateArray';
@@ -11,12 +8,10 @@ import generateArray from '../utility/generateArray';
 export default function BogoSort() {
     const [numDataPoints, setNumDataPoints] = useState(6);
     const [elements, setElements] = useState(shuffleArray(generateArray(numDataPoints)));
-    const [numShuffles, setNumShuffles] = useState(0);
     const [timeString] = useTimeString(elements, numDataPoints);
     const [generator, setGenerator] = useState(bogoSortGen(elements));
 
     useEffect(() => {
-        setNumShuffles(0);
         setGenerator(bogoSortGen(shuffleArray(generateArray(numDataPoints))));
     }, [numDataPoints])
 
@@ -26,7 +21,6 @@ export default function BogoSort() {
             if(!result.done){
                 let copy = JSON.parse(JSON.stringify(result.value));
                 setElements(copy);
-                setNumShuffles(ns => ns + 1);
             }
             else{
                 clearInterval(interval);
@@ -45,7 +39,7 @@ export default function BogoSort() {
                 <div className='flexCenter'>
                     <div className='body' style={{ marginRight: '10px' }}>{numDataPoints}</div>
                     <div className="slidecontainer">
-                        <input type="range" min="4" max="20" value={numDataPoints} className="slider" id="myRange" onChange={(e) => setNumDataPoints(e.target.value)} />
+                        <input type="range" min={4} max={20} value={numDataPoints} className="slider" id="myRange" onChange={(e) => setNumDataPoints(+e.target.value)} />
                     </div>
                 </div>
                 <div className='body' style={{ textAlign: 'right' }}>

@@ -1,16 +1,12 @@
 import { useState, useEffect } from 'react';
 import radixSortGen from '../generators/radixSortGen';
 import SortingTable from "../components/SortingTable";
-import BlackCard from '../components/BlackCard';
-import TimeDisplay from '../components/TimeDisplay';
-import IncreaserDecreaser from '../components/IncreaserDecreaser';
 import useTimeString from '../custom_hooks/useTimeString';
-import generateFewUniqueArray from '../utility/generateFewUniqueArray';
 import generateArray from "../utility/generateArray";
 import shuffleArray from '../utility/shuffleArray';
 
 export default function RadixSort() {
-    const [numDataPoints, setNumDataPoints] = useState(10);
+    const [numDataPoints, setNumDataPoints] = useState(1000);
     const [elements, setElements] = useState(shuffleArray(generateArray(numDataPoints)));
     const [generator, setGenerator] = useState(radixSortGen(elements));
     const [reset, setReset] = useState(false);
@@ -30,7 +26,6 @@ export default function RadixSort() {
             }
             else {
                 clearInterval(interval);
-                setNumDataPoints(ndp => ndp + 10);
             }
         }, [0])
 
@@ -46,7 +41,7 @@ export default function RadixSort() {
                 <div className='flexCenter'>
                     <div className='body' style={{ marginRight: '10px' }}>{numDataPoints}</div>
                     <div className="slidecontainer">
-                        <input type="range" min="10" max="2000" value={numDataPoints} className="slider" id="myRange" onChange={(e) => setNumDataPoints(e.target.value)} />
+                        <input type="range" min="10" max="2000" value={numDataPoints} className="slider" id="myRange" onChange={(e) => setNumDataPoints(+e.target.value)} />
                     </div>
                 </div>
                 <div className='body' style={{ textAlign: 'right' }}>

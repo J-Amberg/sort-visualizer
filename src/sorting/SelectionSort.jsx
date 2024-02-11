@@ -1,9 +1,6 @@
 import {useState, useEffect} from 'react';
 import selectionSortGen from "../generators/selectionSortGen";
 import SortingTable from "../components/SortingTable";
-import BlackCard from '../components/BlackCard';
-import TimeDisplay from '../components/TimeDisplay';
-import IncreaserDecreaser from '../components/IncreaserDecreaser';
 import useTimeString from '../custom_hooks/useTimeString';
 import generateArray  from "../utility/generateArray";
 import shuffleArray from '../utility/shuffleArray';
@@ -42,7 +39,7 @@ export default function SelectionSort() {
                 <div className='flexCenter'>
                     <div className='body' style={{ marginRight: '10px' }}>{numDataPoints}</div>
                     <div className="slidecontainer">
-                        <input type="range" min="10" max="2000" value={numDataPoints} className="slider" id="myRange" onChange={(e) => setNumDataPoints(e.target.value)} />
+                        <input type="range" min="10" max="2000" value={numDataPoints} className="slider" id="myRange" onChange={(e) => setNumDataPoints(+e.target.value)} />
                     </div>
                 </div>
                 <div className='body' style={{ textAlign: 'right' }}>
