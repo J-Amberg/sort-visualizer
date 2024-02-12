@@ -9,6 +9,7 @@ import InsertionSort from './sorting/InsertionSort';
 import RadixSort from './sorting/RadixSort';
 import ShakerSort from './sorting/ShakerSort';
 import OddEvenSort from './sorting/OddEvenSort';
+import PancakeSort from './sorting/PancakeSort';
 
 import {
     createBrowserRouter,
@@ -55,11 +56,15 @@ const router = createBrowserRouter([
     {
         path: 'oddeven',
         element: <OddEvenSort />
+    },
+    {
+        path: 'pancake',
+        element: <PancakeSort/>
     }
 ]);
 
 export default function Home() {
-    const [windowWidth, setWindowWidth] = useGetWindowWidth();
+    const [windowWidth] = useGetWindowWidth();
 
     return <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
         <div style={{ width: '290px' }}>

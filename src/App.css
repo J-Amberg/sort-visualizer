@@ -3,7 +3,6 @@
   --background: #000000;
   --accent: #31A5FF;
   --accent2: #1A6EAF;
-  overflow-y: none;
 }
 
 body{
@@ -11,20 +10,6 @@ body{
   font-family: 'Kumbh Sans', sans-serif;
   margin: 0px;
   padding: 0px;
-}
-
-.homeBackground:hover{
-  background-color:var(--accent);
-  color: var(--secondary);
-  cursor: pointer;
-}
-
-.title{
-  color: var(--text);
-  font-size: 48px;
-  font-weight: 900;
-  line-height: normal;
-  letter-spacing: 4.8px;
 }
 
 .heading{
@@ -40,158 +25,10 @@ body{
   color: var(--text);
 }
 
-.smallHeading{
-  color: var(--text);
-  /* Small Heading */
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 126%; /* 40px */
-  letter-spacing: 0.96px;
-  margin: 10px 0 10px 44px;
-  cursor: pointer;
-  position: relative;
-  
-}
-
-.textContainer {
-  display: block; /* Ensure the container wraps around the text */
-  position: relative; /* Add position relative */
-}
-
-.textContainer:hover .hiddenUnderline {
-  border-bottom: 1px solid white;
-  animation: out 0.3s forwards;
-}
-
-.hiddenUnderline{
-  position: absolute;
-  animation: in 0.3s forwards;
-  border-bottom: 1px solid white;
-}
-
-@keyframes in {
-  0%{
-    width: 80px;
-  }
-  100%{
-    width: 0px;
-  }
-}
-
-@keyframes out{
-  0%{width: 0px;}
-  100%{width: 80px;}
-}
-.underline{
-  border-bottom: 1px solid white;
-}
-
-.categoryContainer:hover .category{
-  transition: filter 0.2s;
-  filter: blur(0px);
-}
-
-.category{
-  color: var(--accent);
-  filter: blur(4px);
-  margin: 18px 0 18px 18px;
-  cursor: default;
-}
-
-.paragraph{
-  font-family: "Kumbh Sans";
-  font-size: 24px;
-  font-weight: 300;
-}
-
-.sortingTable {
-  position: fixed;
-  bottom: 0;
-  left: 290px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  margin: 0 0 0 15px;
-}
-
-.sortCard{
-  padding: 20px;
-  color: var(--text);
-  background-color: var(--primary);
-  border: 1px solid var(--text);
-  border-radius: 20px;
-}
-.sortCard:hover{
-  background-color: var(--secondary);
-  cursor: pointer;
-}
-
-.card{
-  background-color: var(--primary);
-  border: 1px solid var(--text);
-  border-radius: 20px;
-  height: 78px;
-}
-
-.selectableCard:hover{
-  background-color: var(--secondary);
-}
-
-.blackCard{
-  background-color: var(--secondary);
-  color: var(--accent);
-  border-radius: 20px;
-  height: 78px;
-  padding: '0 18px 0 18px';
-  border: 1px solid var(--accent);
-}
-
-.componentRow{
-  display:flex;
-  justify-content: flex-end;
-  margin-top:15px;
-  gap: 15px;
-}
-
 .flexCenter{
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.selectableIcon{
-  width: 45px;
-  cursor: pointer;
-}
-
-.dataBar{
-  border-top-left-radius: 6px; 
-  border-top-right-radius: 6px;
-  background: var(--accent);
-}
-.dataBar[data-status="active"]{
-  background: var(--text);
-}
-.dataBar[data-status="solved"]{
-  background: var(--accent2);
-}
-.dataBar[data-status="selected"]{
-  background: var(--background);
-}
-
-.primary{
-  color: var(--primary);
-}
-.text{
-  color: var(--text);
-}
-.secondary{
-  color: var(--secondary);
-}
-.accent{
-  color: var(--accent);
 }
 
 .slidecontainer {

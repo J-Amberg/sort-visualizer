@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import useGetWindowWidth from '../custom_hooks/useGetWindowWidth';
+import '../styles/components/SortingTable.css';
 
 export default function SortingTable({ elements }) {
-    const [windowWidth, setWindowWidth] = useGetWindowWidth();
+    const [windowWidth] = useGetWindowWidth();
     const [windowHeight, setWindowHeight] = useState(0);
 
     useEffect(() => {

@@ -1,0 +1,28 @@
+.sortingTable {
+    position: fixed;
+    bottom: 0;
+    left: 290px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0 0 0 15px;
+}
+
+.dataBar {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background: var(--accent);
+}
+
+.dataBar[data-status="active"] {
+    background: var(--text);
+}
+
+.dataBar[data-status="solved"] {
+    background: var(--accent2);
+}
+
+.dataBar[data-status="selected"] {
+    background: var(--background);
+}

@@ -1,9 +1,11 @@
+import '../styles/components/Navigation.css';
+
 export default function Navigation(){
     const goToPage = (page) => {
         window.location.href = `/${page}`;
     }
 
-    return <div style={{height: '100vh', width: '290px', borderRight: '1px solid #565656', marginTop: '-18px'}}>
+    return <div className='navigation' style={{}}>
         <div className='categoryContainer'>
             <div className='smallHeading category'>
                 Speedy
@@ -36,6 +38,9 @@ export default function Navigation(){
             </div>
             <div className='smallHeading textContainer' onClick={() => goToPage('oddeven')}>
                 <span className='underline'>Odd Even</span><span className='hiddenUnderline'>&nbsp;Sort</span> 
+            </div>
+            <div className='smallHeading textContainer' onClick={() => goToPage('pancake')}>
+                    <span className='underline'>Pancake</span><span className='hiddenUnderline'>&nbsp;Sort</span> 
             </div>
         </div>
         <div className='categoryContainer'>

@@ -1,17 +1,12 @@
-export default function* bucketSort(array, bucketSize) {
+export default function* bucketSort(array, bucketSize = 10) {
     let numBuckets = Math.ceil(array.length/bucketSize);
     let buckets = Array.from({length: numBuckets}, () => 0);
 
     //bucket sort
     for(let i = 0; i < array.length; i++){
         array[i].active = true;
-        if(i % bucketSize === 0){
-            array[i].selected = true;
-        }
         let bucket = Math.floor((array[i].val - 1) / bucketSize);
         let index = (bucket * bucketSize) + buckets[bucket];
-        //console.log('index: ' + index);
-        //console.log('bucket: ' + bucket);
         if(i % (bucket * bucketSize) < buckets[bucket]){
             yield array;
             array[i].active = false;
@@ -49,8 +44,6 @@ export default function* bucketSort(array, bucketSize) {
                 yield array;
                 array[index].active = false;
                 array[index + 1].active = false;
-                array[index].selected = false;
-                array[index + 1].selected = false;
             }
         }
         
