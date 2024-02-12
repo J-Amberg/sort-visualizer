@@ -1,6 +1,6 @@
 import '../styles/components/Navigation.css';
 
-export default function Navigation(){
+export default function Navigation() {
     const goToPage = (page) => {
         window.location.href = `/${page}`;
     }
@@ -11,13 +11,13 @@ export default function Navigation(){
                 Speedy
             </div>
             <div className='smallHeading textContainer' onClick={() => goToPage('bucket')}>
-                    <span className='underline'>Bucket</span><span className='hiddenUnderline'>&nbsp;Sort</span> 
+                <span className='underline'>Bucket</span><span className='hiddenUnderline'>&nbsp;Sort</span>
             </div>
             <div className='smallHeading textContainer' onClick={() => goToPage('radix')}>
-                <span className='underline'>Radix</span><span className='hiddenUnderline'>&nbsp;Sort</span> 
+                <span className='underline'>Radix</span><span className='hiddenUnderline'>&nbsp;Sort</span>
             </div>
             <div className='smallHeading textContainer' onClick={() => goToPage('quick')}>
-                <span className='underline'>Quick</span><span className='hiddenUnderline'>&nbsp;Sort</span> 
+                <span className='underline'>Quick</span><span className='hiddenUnderline'>&nbsp;Sort</span>
             </div>
         </div>
         <div className='categoryContainer'>
@@ -25,22 +25,22 @@ export default function Navigation(){
                 Quadratic
             </div>
             <div className='smallHeading textContainer' onClick={() => goToPage('bubble')}>
-                    <span className='underline'>Bubble</span><span className='hiddenUnderline'>&nbsp;Sort</span> 
+                <span className='underline'>Bubble</span><span className='hiddenUnderline'>&nbsp;Sort</span>
             </div>
             <div className='smallHeading textContainer' onClick={() => goToPage('shaker')}>
-                <span className='underline'>Shaker</span><span className='hiddenUnderline'>&nbsp;Sort</span> 
+                <span className='underline'>Shaker</span><span className='hiddenUnderline'>&nbsp;Sort</span>
             </div>
             <div className='smallHeading textContainer' onClick={() => goToPage('selection')}>
-                <span className='underline'>Selection</span><span className='hiddenUnderline'>&nbsp;Sort</span> 
+                <span className='underline'>Selection</span><span className='hiddenUnderline'>&nbsp;Sort</span>
             </div>
             <div className='smallHeading textContainer' onClick={() => goToPage('insertion')}>
-                    <span className='underline'>Insertion</span><span className='hiddenUnderline'>&nbsp;Sort</span> 
+                <span className='underline'>Insertion</span><span className='hiddenUnderline'>&nbsp;Sort</span>
             </div>
             <div className='smallHeading textContainer' onClick={() => goToPage('oddeven')}>
-                <span className='underline'>Odd Even</span><span className='hiddenUnderline'>&nbsp;Sort</span> 
+                <span className='underline'>Odd Even</span><span className='hiddenUnderline'>&nbsp;Sort</span>
             </div>
             <div className='smallHeading textContainer' onClick={() => goToPage('pancake')}>
-                    <span className='underline'>Pancake</span><span className='hiddenUnderline'>&nbsp;Sort</span> 
+                <span className='underline'>Pancake</span><span className='hiddenUnderline'>&nbsp;Sort</span>
             </div>
         </div>
         <div className='categoryContainer'>
@@ -48,7 +48,7 @@ export default function Navigation(){
                 Random
             </div>
             <div className='smallHeading textContainer' onClick={() => goToPage('bogo')}>
-                <span className='underline'>BOGO</span><span className='hiddenUnderline'>&nbsp;Sort</span> 
+                <span className='underline'>BOGO</span><span className='hiddenUnderline'>&nbsp;Sort</span>
             </div>
         </div>
     </div>

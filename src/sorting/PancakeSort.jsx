@@ -2,6 +2,7 @@ import Sort from "../components/Sort";
 import pancakeSortGen from '../generators/pancakeSortGen';
 
 export default function PancakeSort(){
+    document.title += " | Pancake Sort";
     return <Sort
         numElements={120}
         min={10}
