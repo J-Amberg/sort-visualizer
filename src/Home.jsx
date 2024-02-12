@@ -3,6 +3,7 @@ import Navigation from './components/Navigation';
 import BubbleSort from './sorting/BubbleSort';
 import BogoSort from './sorting/BogoSort';
 import SelectionSort from './sorting/SelectionSort';
+import DoubleSelectionSort from './sorting/DoubleSelectionSort';
 import BucketSort from './sorting/BucketSort';
 import QuickSort from './sorting/QuickSort';
 import InsertionSort from './sorting/InsertionSort';
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
     {
         path: 'selection',
         element: <SelectionSort />
+    },
+    {
+        path: 'doubleselection',
+        element: <DoubleSelectionSort/>
     },
     {
         path: 'bubble',
@@ -67,10 +72,10 @@ export default function Home() {
     const [windowWidth] = useGetWindowWidth();
 
     return <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-        <div style={{ width: '290px' }}>
+        <div style={{ width: '310px' }}>
             <Navigation />
         </div>
-        <div style={{ width: `${windowWidth - 320}px`, margin: '0 15px 0 15px' }}>
+        <div style={{ width: `${windowWidth - 310}px`, margin: '0 15px 0 15px' }}>
             <RouterProvider router={router} />
         </div>
     </div>

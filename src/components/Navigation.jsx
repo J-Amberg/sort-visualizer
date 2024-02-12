@@ -33,6 +33,9 @@ export default function Navigation() {
             <div className='smallHeading textContainer' onClick={() => goToPage('selection')}>
                 <span className='underline'>Selection</span><span className='hiddenUnderline'>&nbsp;Sort</span>
             </div>
+            <div className='smallHeading textContainer' onClick={() => goToPage('doubleselection')}>
+                <span className='underline'>2Selection</span><span className='hiddenUnderline'>&nbsp;Sort</span>
+            </div>
             <div className='smallHeading textContainer' onClick={() => goToPage('insertion')}>
                 <span className='underline'>Insertion</span><span className='hiddenUnderline'>&nbsp;Sort</span>
             </div>

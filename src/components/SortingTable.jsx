@@ -21,7 +21,7 @@ export default function SortingTable({ elements }) {
     }, []);
 
     return (
-        <div className='sortingTable' style={{width: `${windowWidth - 320}px`}}>
+        <div className='sortingTable' style={{width: `${windowWidth - 340}px`}}>
             {elements.map(({ active, solved, selected, val }, idx) => (
                 <div
                     key={idx}

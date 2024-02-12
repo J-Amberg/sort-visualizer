@@ -1,6 +1,5 @@
 .navigation{
     height: calc(100vh + 17px);
-    width: 290px; 
     border-right: 1px solid #565656;
     margin-top: -18px;
     overflow-y: scroll;
