@@ -1,5 +1,5 @@
-import Sort from "../components/Sort";
-import selectionSortGen from '../generators/selectionSortGen';
+import Sort from "../../components/Sort";
+import selectionSortGen from '../../generators/selectionSortGen';
 
 export default function SelectionSort(){
     document.title += " | Selection Sort";

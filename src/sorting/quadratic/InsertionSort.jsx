@@ -1,5 +1,5 @@
-import Sort from "../components/Sort";
-import insertionSortGen from '../generators/insertionSortGen';
+import Sort from "../../components/Sort";
+import insertionSortGen from '../../generators/insertionSortGen';
 
 export default function InsertionSort(){
     document.title += " | Insertion Sort";

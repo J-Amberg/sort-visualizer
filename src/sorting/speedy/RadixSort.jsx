@@ -1,5 +1,5 @@
-import Sort from "../components/Sort";
-import radixSortGen from '../generators/radixSortGen';
+import Sort from "../../components/Sort";
+import radixSortGen from '../../generators/radixSortGen';
 
 export default function RadixSort(){
     document.title += " | Radix Sort";

@@ -1,17 +1,17 @@
 import useGetWindowWidth from './custom_hooks/useGetWindowWidth';
 import Navigation from './components/Navigation';
-import BubbleSort from './sorting/BubbleSort';
-import BogoSort from './sorting/BogoSort';
-import BozoSort from './sorting/BozoSort';
-import SelectionSort from './sorting/SelectionSort';
-import DoubleSelectionSort from './sorting/DoubleSelectionSort';
-import BucketSort from './sorting/BucketSort';
-import QuickSort from './sorting/QuickSort';
-import InsertionSort from './sorting/InsertionSort';
-import RadixSort from './sorting/RadixSort';
-import ShakerSort from './sorting/ShakerSort';
-import OddEvenSort from './sorting/OddEvenSort';
-import PancakeSort from './sorting/PancakeSort';
+import BubbleSort from './sorting/quadratic/BubbleSort';
+import BogoSort from './sorting/random/BogoSort';
+import BozoSort from './sorting/random/BozoSort';
+import SelectionSort from './sorting/quadratic/SelectionSort';
+import DoubleSelectionSort from './sorting/quadratic/DoubleSelectionSort';
+import BucketSort from './sorting/speedy/BucketSort';
+import QuickSort from './sorting/speedy/QuickSort';
+import InsertionSort from './sorting/quadratic/InsertionSort';
+import RadixSort from './sorting/speedy/RadixSort';
+import ShakerSort from './sorting/quadratic/ShakerSort';
+import OddEvenSort from './sorting/quadratic/OddEvenSort';
+import PancakeSort from './sorting/quadratic/PancakeSort';
 
 import {
     createBrowserRouter,

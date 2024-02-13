@@ -1,5 +1,5 @@
-import Sort from "../components/Sort";
-import quickSortGen from '../generators/quickSortGen';
+import Sort from "../../components/Sort";
+import quickSortGen from '../../generators/quickSortGen';
 
 export default function QuickSort(){
     document.title += " | Quick Sort";

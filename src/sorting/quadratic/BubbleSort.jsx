@@ -1,5 +1,5 @@
-import Sort from "../components/Sort";
-import bubbleSortGen from '../generators/bubbleSortGen';
+import Sort from "../../components/Sort";
+import bubbleSortGen from '../../generators/bubbleSortGen';
 
 export default function BubbleSort(){
     document.title += " | Bubble Sort";

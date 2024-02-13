@@ -1,5 +1,5 @@
-import Sort from "../components/Sort";
-import bucketSortGen from '../generators/bucketSortGen';
+import Sort from "../../components/Sort";
+import bucketSortGen from '../../generators/bucketSortGen';
 
 export default function BucketSort(){
     document.title += " | Bucket Sort";

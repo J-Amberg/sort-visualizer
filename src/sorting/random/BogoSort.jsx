@@ -1,5 +1,5 @@
-import Sort from "../components/Sort";
-import bogoSortGen from '../generators/bogoSortGen';
+import Sort from "../../components/Sort";
+import bogoSortGen from '../../generators/bogoSortGen';
 
 export default function BogoSort(){
     document.title += " | BOGO Sort";

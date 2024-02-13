@@ -1,5 +1,5 @@
-import Sort from "../components/Sort";
-import doubleSelectionSortGen from '../generators/doubleSelectionSortGen';
+import Sort from "../../components/Sort";
+import doubleSelectionSortGen from '../../generators/doubleSelectionSortGen';
 
 export default function DoubleSelectionSort(){
     document.title += " | 2Selection Sort";

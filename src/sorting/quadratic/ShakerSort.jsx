@@ -1,5 +1,5 @@
-import Sort from "../components/Sort";
-import shakerSortGen from '../generators/shakerSortGen';
+import Sort from "../../components/Sort";
+import shakerSortGen from '../../generators/shakerSortGen';
 
 export default function ShakerSort(){
     document.title += " | Shaker Sort";

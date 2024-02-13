@@ -1,5 +1,5 @@
-import Sort from "../components/Sort";
-import oddEvenSortGen from '../generators/oddEvenSortGen';
+import Sort from "../../components/Sort";
+import oddEvenSortGen from '../../generators/oddEvenSortGen';
 
 export default function OddEvenSort(){
     document.title += " | Odd Even Sort";
