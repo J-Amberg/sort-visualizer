@@ -4,9 +4,9 @@ import pancakeSortGen from '../generators/pancakeSortGen';
 export default function PancakeSort(){
     document.title += " | Pancake Sort";
     return <Sort
-        numElements={120}
+        numElements={1000}
         min={10}
-        max={1000}
+        max={2000}
         sortGen={pancakeSortGen}
         title={'pancake sort'}
     />

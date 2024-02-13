@@ -2,6 +2,7 @@ import useGetWindowWidth from './custom_hooks/useGetWindowWidth';
 import Navigation from './components/Navigation';
 import BubbleSort from './sorting/BubbleSort';
 import BogoSort from './sorting/BogoSort';
+import BozoSort from './sorting/BozoSort';
 import SelectionSort from './sorting/SelectionSort';
 import DoubleSelectionSort from './sorting/DoubleSelectionSort';
 import BucketSort from './sorting/BucketSort';
@@ -27,11 +28,15 @@ const router = createBrowserRouter([
         element: <BogoSort />,
     },
     {
+        path: 'bozo',
+        element: <BozoSort />
+    },
+    {
         path: 'selection',
         element: <SelectionSort />
     },
     {
-        path: 'doubleselection',
+        path: '2selection',
         element: <DoubleSelectionSort/>
     },
     {

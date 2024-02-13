@@ -12,7 +12,7 @@
 .dataBar {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-    background: var(--accent);
+    background: var(--primary);
 }
 
 .dataBar[data-status="active"] {
@@ -20,9 +20,5 @@
 }
 
 .dataBar[data-status="solved"] {
-    background: var(--accent2);
-}
-
-.dataBar[data-status="selected"] {
-    background: var(--background);
+    background: var(--secondary);
 }

@@ -1,4 +1,4 @@
-.navigation{
+.navigation {
     height: calc(100vh + 17px);
     border-right: 1px solid #565656;
     margin-top: -18px;
@@ -6,66 +6,84 @@
     scrollbar-width: none;
 }
 
-.navigation::-webkit-scrollbar{
+.navigation::-webkit-scrollbar {
     display: none;
 }
 
-.smallHeading{
+.smallHeading {
     color: var(--text);
     /* Small Heading */
     font-size: 32px;
     font-style: normal;
     font-weight: 500;
-    line-height: 128%; /* 40px */
+    line-height: 41px;
+    /* 40px */
     letter-spacing: 0.96px;
-    margin: 10px 0 10px 44px;
+    margin: 10px 0 0 44px;
     cursor: pointer;
     position: relative;
-    
-  }
-  
-  .textContainer {
-    display: block; /* Ensure the container wraps around the text */
-    position: relative; /* Add position relative */
-  }
-  
-  .textContainer:hover .hiddenUnderline {
-    border-bottom: 1px solid white;
+    text-transform: capitalize;
+}
+
+.smallHeading[data-status="selected"] {
+    color: var(--secondary);
+}
+
+.smallHeading[data-status="selected"] .underline{
+    border-color: var(--secondary);
+}
+
+.smallHeading[data-status="selected"] .hiddenUnderline{
+    border-color: var(--secondary);
+}
+
+.textContainer {
+    display: block;
+    position: relative;
+}
+
+.textContainer:hover .hiddenUnderline {
     animation: out 0.3s forwards;
-  }
-  
-  .hiddenUnderline{
+}
+
+.hiddenUnderline {
     position: absolute;
     animation: in 0.3s forwards;
     border-bottom: 1px solid white;
-  }
-  
-  @keyframes in {
-    0%{
-      width: 80px;
+}
+
+@keyframes in {
+    0% {
+        width: 80px;
     }
-    100%{
-      width: 0px;
+
+    100% {
+        width: 0px;
     }
-  }
-  
-  @keyframes out{
-    0%{width: 0px;}
-    100%{width: 80px;}
-  }
-  .underline{
+}
+
+@keyframes out {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 80px;
+    }
+}
+
+.underline {
     border-bottom: 1px solid white;
-  }
-  
-  .categoryContainer:hover .category{
+}
+
+.categoryContainer:hover .category {
     transition: filter 0.2s;
     filter: blur(0px);
-  }
-  
-  .category{
-    color: var(--accent);
+}
+
+.category {
+    color: var(--primary);
     filter: blur(4px);
     margin: 18px 0 18px 18px;
     cursor: default;
-  }
-  
+}

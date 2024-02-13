@@ -4,13 +4,15 @@ import useTimeString from '../custom_hooks/useTimeString';
 import shuffleArray from '../utility/shuffleArray';
 import generateArray from '../utility/generateArray';
 
-export default function Sort({sortGen, title ='add title', numElements = 100, min=10, max=100}) {
+export default function Sort({sortGen, title ='add title', numElements = 100, min=10, max=100, defaultDelay = 0}) {
     const [numDataPoints, setNumDataPoints] = useState(numElements);
     const [elements, setElements] = useState(shuffleArray(generateArray(numDataPoints)));
     const [timeString] = useTimeString(elements, numDataPoints);
     const [generator, setGenerator] = useState(sortGen(elements));
+    const [delay, setDelay] = useState(defaultDelay ? defaultDelay : Math.max(100 - numDataPoints, 0));
 
     useEffect(() => {
+        setDelay(defaultDelay ? defaultDelay : Math.max(100 - numDataPoints, 0));
         setGenerator(sortGen(shuffleArray(generateArray(numDataPoints))));
     }, [numDataPoints])
 
@@ -24,7 +26,7 @@ export default function Sort({sortGen, title ='add title', numElements = 100, mi
             else{
                 clearInterval(interval);
             }
-        }, [0])
+        }, [delay])
         // Cleanup function to clear the interval
         return () => clearInterval(interval);
     }, [generator])

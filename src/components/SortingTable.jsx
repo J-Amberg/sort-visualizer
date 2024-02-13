@@ -28,7 +28,7 @@ export default function SortingTable({ elements }) {
                     className='dataBar'
                     style={{
                         width: `calc(100% / ${elements.length})`,
-                        height: `${val * ((windowHeight - 110) / elements.length)}px`,
+                        height: `${val * ((windowHeight - 125) / elements.length)}px`,
                     }}
                     data-status={active ? 'active' : solved ? 'solved' : selected ? 'selected' : ''}
                 ></div>
